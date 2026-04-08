@@ -13,6 +13,7 @@ const KontaktPage = lazy(() => import("./pages/KontaktPage"));
 const ImpressumPage = lazy(() => import("./pages/ImpressumPage"));
 const DatenschutzPage = lazy(() => import("./pages/DatenschutzPage"));
 const AGBPage = lazy(() => import("./pages/AGBPage"));
+const LoginPage = lazy(() => import("./pages/LoginPage"));
 const NotFoundPage = lazy(() => import("./pages/NotFoundPage"));
 
 function ScrollToTop() {
@@ -55,6 +56,7 @@ export default function CallLanaApp() {
               <Route path="/impressum" element={<ImpressumPage />} />
               <Route path="/datenschutz" element={<DatenschutzPage />} />
               <Route path="/agb" element={<AGBPage />} />
+              <Route path="/login" element={<LoginPage />} />
               <Route path="*" element={<NotFoundPage />} />
             </Routes>
           </Suspense>

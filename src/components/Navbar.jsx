@@ -74,7 +74,13 @@ export default function Navbar() {
           ))}
         </div>
 
-        <div className="flex items-center gap-3 flex-shrink-0">
+        <div className="flex items-center gap-2 lg:gap-3 flex-shrink-0">
+          <Link
+            to="/login"
+            className="hidden sm:block text-slate-400 hover:text-white px-3 py-2 rounded-full text-sm font-medium transition-colors whitespace-nowrap"
+          >
+            Login
+          </Link>
           <Link
             to="/kontakt"
             className="hidden sm:block bg-white text-slate-900 hover:bg-slate-200 px-4 lg:px-5 py-2 lg:py-2.5 rounded-full text-sm font-semibold transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(255,255,255,0.1)] whitespace-nowrap"
@@ -111,8 +117,14 @@ export default function Navbar() {
               </Link>
             ))}
             <Link
+              to="/login"
+              className="mt-2 px-4 py-3 rounded-xl text-base font-medium text-slate-400 hover:text-white hover:bg-white/5 transition-colors text-center border border-white/10"
+            >
+              Login
+            </Link>
+            <Link
               to="/kontakt"
-              className="mt-2 bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-4 py-3 rounded-xl text-base font-semibold text-center"
+              className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-4 py-3 rounded-xl text-base font-semibold text-center"
             >
               Demo buchen
             </Link>
