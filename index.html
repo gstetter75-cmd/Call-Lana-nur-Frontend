@@ -2,7 +2,8 @@
 <html lang="de">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/Call-Lana-nur-Frontend/favicon.svg" />
+    <link rel="apple-touch-icon" href="/Call-Lana-nur-Frontend/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Call Lana - KI-Telefonassistentin für das Handwerk</title>
     <meta name="description" content="Die KI, die Anrufe annimmt, Termine bucht und Kunden qualifiziert. Damit du dich zu 100% auf dein Handwerk konzentrieren kannst." />
@@ -13,16 +14,47 @@
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://call-lana.de" />
     <meta property="og:locale" content="de_DE" />
+    <meta property="og:site_name" content="Call Lana" />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Call Lana - KI-Telefonassistentin für das Handwerk" />
     <meta name="twitter:description" content="Die KI, die Anrufe annimmt, Termine bucht und Kunden qualifiziert." />
 
-    <!-- Misc -->
+    <!-- SEO -->
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://call-lana.de" />
     <meta name="theme-color" content="#0B0F19" />
+    <meta name="author" content="Call Lana" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Call Lana",
+      "applicationCategory": "BusinessApplication",
+      "description": "KI-Telefonassistentin für Handwerksbetriebe. Nimmt Anrufe an, bucht Termine und qualifiziert Kunden.",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "AggregateOffer",
+        "lowPrice": "149",
+        "highPrice": "299",
+        "priceCurrency": "EUR",
+        "offerCount": "3"
+      },
+      "provider": {
+        "@type": "Organization",
+        "name": "Call Lana",
+        "url": "https://call-lana.de"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Deutschland"
+      },
+      "inLanguage": "de"
+    }
+    </script>
   </head>
   <body>
     <div id="root"></div>

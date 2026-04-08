@@ -17,7 +17,7 @@ const LEGAL_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="border-t border-white/10 bg-[#06090F] pt-16 pb-8 relative z-20">
+    <footer role="contentinfo" aria-label="Footer" className="border-t border-white/10 bg-[#06090F] pt-16 pb-8 relative z-20">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
           <div className="col-span-2">

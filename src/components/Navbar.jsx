@@ -25,8 +25,15 @@ export default function Navbar() {
     setMobileOpen(false);
   }, [location.pathname]);
 
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    return () => { document.body.style.overflow = ""; };
+  }, [mobileOpen]);
+
   return (
     <nav
+      role="navigation"
+      aria-label="Hauptnavigation"
       className={`fixed top-0 w-full z-50 transition-all duration-500 border-b ${
         isScrolled
           ? "bg-[#0B0F19]/80 backdrop-blur-md border-white/10 py-3 shadow-lg"
