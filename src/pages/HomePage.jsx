@@ -9,7 +9,6 @@ import {
   Wrench,
   Zap,
   Home as HomeIcon,
-  Star,
   Activity,
 } from "lucide-react";
 import LanaFace from "../components/LanaFace";
@@ -21,27 +20,24 @@ const INDUSTRIES = [
   { name: "Bauunternehmen", icon: <ShieldCheck className="w-5 h-5" /> },
 ];
 
-const TESTIMONIALS = [
+const USE_CASES = [
   {
-    name: "Thomas W.",
-    role: "Elektrikermeister",
-    quote:
-      "Wir haben früher oft Anrufe auf der Baustelle verpasst. Lana fängt jetzt alles ab und meine Jungs können ungestört arbeiten. Spart mir locker 3 Stunden am Tag.",
-    metric: "Spart 3h pro Tag",
+    role: "Elektrikerbetrieb",
+    scenario:
+      "Auf der Baustelle klingelt ständig das Telefon. Lana nimmt jeden Anruf an, notiert das Anliegen und bucht bei Bedarf direkt einen Termin — damit dein Team ungestört arbeiten kann.",
+    metric: "Kein Anruf geht verloren",
   },
   {
-    name: "Marcus T.",
-    role: "Klempnermeister",
-    quote:
-      "Ich war sehr skeptisch gegenüber KI am Telefon. Aber die Kunden merken den Unterschied kaum und buchen fleißig Termine. Hat sich in Woche 1 rentiert.",
-    metric: "40% mehr Aufträge",
+    role: "Sanitär-Notdienst",
+    scenario:
+      "Nachts, am Wochenende, im Urlaub: Lana erkennt echte Notfälle sofort und leitet sie per WhatsApp weiter. Alles andere wird als Ticket erfasst.",
+    metric: "24/7 erreichbar",
   },
   {
-    name: "Klaus S.",
-    role: "Dachdeckermeister",
-    quote:
-      "Gerade bei Stürmen steht das Telefon nicht still. Lana sortiert die Notfälle aus und schickt mir direkt eine WhatsApp. Eine unglaubliche Erleichterung.",
-    metric: "0 verpasste Kunden",
+    role: "Dachdeckerbetrieb",
+    scenario:
+      "Nach einem Sturm stehen die Leitungen nicht still. Lana priorisiert automatisch nach Dringlichkeit und erstellt eine sortierte Aufgabenliste für dein Büro.",
+    metric: "Automatisch priorisiert",
   },
 ];
 
@@ -192,36 +188,31 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* TESTIMONIALS */}
+      {/* USE CASES */}
       <section className="py-24 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px] pointer-events-none" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <h2 className="text-3xl font-bold text-white text-center mb-16 animate-fade-in-up">
-            Von Handwerkern empfohlen
-          </h2>
+          <div className="text-center mb-16 animate-fade-in-up">
+            <h2 className="text-3xl font-bold text-white mb-4">
+              So hilft Lana in deinem Gewerk
+            </h2>
+            <p className="text-slate-400 max-w-lg mx-auto">
+              Typische Szenarien aus dem Handwerker-Alltag — und wie Lana sie löst.
+            </p>
+          </div>
           <div className="grid md:grid-cols-3 gap-6">
-            {TESTIMONIALS.map((t, i) => (
+            {USE_CASES.map((t, i) => (
               <div
                 key={i}
                 className="group bg-gradient-to-b from-white/[0.05] to-transparent border border-white/5 hover:border-white/20 hover:bg-white/[0.08] transition-all duration-300 rounded-2xl p-6 relative animate-fade-in-up"
                 style={{ animationDelay: `${0.2 + i * 0.1}s` }}
               >
-                <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, j) => (
-                    <Star
-                      key={j}
-                      className="w-4 h-4 fill-amber-400 text-amber-400 group-hover:scale-110 transition-transform"
-                      style={{ transitionDelay: `${j * 50}ms` }}
-                    />
-                  ))}
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-medium mb-4">
+                  {t.role}
                 </div>
-                <p className="text-slate-300 mb-6 italic">"{t.quote}"</p>
-                <div className="flex justify-between items-end mt-auto">
-                  <div>
-                    <p className="font-bold text-white">{t.name}</p>
-                    <p className="text-sm text-slate-500">{t.role}</p>
-                  </div>
-                  <div className="text-xs font-bold text-blue-400 bg-blue-500/10 px-2 py-1 rounded-md border border-blue-500/20">
+                <p className="text-slate-300 mb-6 leading-relaxed">{t.scenario}</p>
+                <div className="flex justify-end">
+                  <div className="text-xs font-bold text-blue-400 bg-blue-500/10 px-3 py-1.5 rounded-md border border-blue-500/20">
                     {t.metric}
                   </div>
                 </div>

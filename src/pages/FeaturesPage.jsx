@@ -1,15 +1,13 @@
+import { Link } from "react-router-dom";
 import {
-  PhoneCall, Calendar, Clock, MessageSquare, FileText, Brain, Mail,
-  Truck, Target, Share2,
+  PhoneCall, Calendar, Clock, MessageSquare, FileText, Mail,
+  ShieldCheck, ArrowRight,
 } from "lucide-react";
 
-const FEATURES_GRID = [
-  { icon: <FileText className="w-6 h-6" />, title: "Datenextraktion", desc: "Strukturierte Tickets aus Anrufen", color: "text-emerald-400" },
-  { icon: <Brain className="w-6 h-6" />, title: "KI-Onboarding", desc: "Wissensbasis in Sekunden", color: "text-purple-400" },
-  { icon: <Mail className="w-6 h-6" />, title: "Follow-Ups", desc: "WhatsApp & E-Mail automatisch", color: "text-amber-400" },
-  { icon: <Truck className="w-6 h-6" />, title: "Einsatzplaner", desc: "Packlisten für Monteure", color: "text-teal-400" },
-  { icon: <Target className="w-6 h-6" />, title: "Lead-Scoring", desc: "Aufträge priorisieren", color: "text-rose-400" },
-  { icon: <Share2 className="w-6 h-6" />, title: "Social Media", desc: "Posts automatisch erstellen", color: "text-orange-400" },
+const EXTRAS = [
+  { icon: <FileText className="w-6 h-6" />, title: "Anruf-Zusammenfassungen", desc: "Jeder Anruf wird strukturiert erfasst: Name, Anliegen, Dringlichkeit, Kontaktdaten.", color: "text-emerald-400" },
+  { icon: <Mail className="w-6 h-6" />, title: "Automatische Benachrichtigung", desc: "Per WhatsApp, SMS oder E-Mail — du entscheidest, wie du informiert wirst.", color: "text-amber-400" },
+  { icon: <ShieldCheck className="w-6 h-6" />, title: "DSGVO-konform", desc: "Hosting in Deutschland. Keine Daten verlassen die EU. Auftragsverarbeitung inklusive.", color: "text-blue-400" },
 ];
 
 export default function FeaturesPage() {
@@ -101,20 +99,18 @@ export default function FeaturesPage() {
         </div>
       </section>
 
-      {/* MORE FEATURES */}
+      {/* EXTRAS */}
       <section className="max-w-7xl mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Und noch viel mehr...
+            Was Lana außerdem mitbringt
           </h2>
           <p className="text-slate-400 max-w-2xl mx-auto">
-            Intelligente Datenextraktion, Onboarding-Generator, Follow-Up
-            Automatisierung, Einsatzplaner, Lead-Scoring und Social Media Manager
-            — alles KI-gestützt.
+            Jeder Anruf wird dokumentiert, jede Nachricht zugestellt — zuverlässig und datenschutzkonform.
           </p>
         </div>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
-          {FEATURES_GRID.map((f, i) => (
+        <div className="grid md:grid-cols-3 gap-6 mb-16">
+          {EXTRAS.map((f, i) => (
             <div
               key={i}
               className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:border-white/20 transition-all hover:-translate-y-1 duration-300 animate-fade-in-up"
@@ -125,6 +121,14 @@ export default function FeaturesPage() {
               <p className="text-slate-400 text-sm">{f.desc}</p>
             </div>
           ))}
+        </div>
+        <div className="text-center animate-fade-in-up" style={{ animationDelay: "0.4s" }}>
+          <Link
+            to="/demos"
+            className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white px-8 py-4 rounded-full font-semibold transition-all hover:shadow-[0_0_40px_rgba(59,130,246,0.5)] hover:-translate-y-1"
+          >
+            Jetzt live testen <ArrowRight className="w-4 h-4" />
+          </Link>
         </div>
       </section>
     </div>
