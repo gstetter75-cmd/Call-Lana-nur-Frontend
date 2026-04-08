@@ -1,6 +1,5 @@
 export default function LanaAvatar({ size = "large", className = "" }) {
   const isLarge = size === "large";
-  const px = isLarge ? 224 : 40;
   const containerSize = isLarge ? "w-56 h-56" : "w-10 h-10";
 
   return (
@@ -13,94 +12,133 @@ export default function LanaAvatar({ size = "large", className = "" }) {
         role="img"
         aria-label="Lana KI-Assistentin"
       >
-        {/* Background circle */}
-        <circle cx="100" cy="100" r="100" fill="url(#bg-gradient)" />
-
-        {/* Inner glow */}
-        <circle cx="100" cy="100" r="85" fill="url(#inner-gradient)" opacity="0.6" />
-
-        {/* Face outline — stylized */}
-        <ellipse cx="100" cy="95" rx="50" ry="55" fill="url(#face-gradient)" />
-
-        {/* Hair */}
-        <path
-          d="M50 80 C50 45, 75 25, 100 25 C125 25, 150 45, 150 80 C150 70, 145 55, 130 48 C120 44, 110 42, 100 42 C90 42, 80 44, 70 48 C55 55, 50 70, 50 80Z"
-          fill="url(#hair-gradient)"
-        />
-        <path
-          d="M48 82 C46 65, 55 40, 100 22 C145 40, 154 65, 152 82 C152 75, 148 55, 132 45 C118 38, 100 36, 100 36 C100 36, 82 38, 68 45 C52 55, 48 75, 48 82Z"
-          fill="url(#hair-gradient)"
-          opacity="0.7"
-        />
-
-        {/* Eyes */}
-        <ellipse cx="80" cy="90" rx="8" ry="9" fill="white" />
-        <ellipse cx="120" cy="90" rx="8" ry="9" fill="white" />
-        <circle cx="81" cy="89" r="5" fill="#1e293b" />
-        <circle cx="121" cy="89" r="5" fill="#1e293b" />
-        <circle cx="83" cy="87" r="2" fill="white" opacity="0.8" />
-        <circle cx="123" cy="87" r="2" fill="white" opacity="0.8" />
-
-        {/* Eyebrows */}
-        <path d="M70 78 Q80 73, 90 76" stroke="#64748b" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-        <path d="M110 76 Q120 73, 130 78" stroke="#64748b" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-
-        {/* Nose */}
-        <path d="M98 98 Q100 104, 102 98" stroke="#94a3b8" strokeWidth="1.5" fill="none" strokeLinecap="round" />
-
-        {/* Smile */}
-        <path d="M85 110 Q100 122, 115 110" stroke="#94a3b8" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-
-        {/* Headset */}
-        <path
-          d="M52 88 Q50 60, 100 50 Q150 60, 148 88"
-          stroke="url(#headset-gradient)"
-          strokeWidth="4"
-          fill="none"
-          strokeLinecap="round"
-        />
-        <rect x="42" y="82" width="14" height="20" rx="7" fill="url(#headset-gradient)" />
-        <rect x="144" y="82" width="14" height="20" rx="7" fill="url(#headset-gradient)" />
-
-        {/* Mic boom */}
-        <path d="M42 96 Q30 100, 28 115 Q27 122, 34 125" stroke="url(#headset-gradient)" strokeWidth="3" fill="none" strokeLinecap="round" />
-        <circle cx="35" cy="127" r="6" fill="url(#headset-gradient)" />
-
-        {/* AI sparkle indicators */}
-        <circle cx="160" cy="45" r="3" fill="#60a5fa" opacity="0.8">
-          <animate attributeName="opacity" values="0.3;1;0.3" dur="2s" repeatCount="indefinite" />
-        </circle>
-        <circle cx="170" cy="60" r="2" fill="#818cf8" opacity="0.6">
-          <animate attributeName="opacity" values="0.2;0.8;0.2" dur="2.5s" repeatCount="indefinite" />
-        </circle>
-        <circle cx="35" cy="50" r="2.5" fill="#60a5fa" opacity="0.7">
-          <animate attributeName="opacity" values="0.4;1;0.4" dur="1.8s" repeatCount="indefinite" />
-        </circle>
-
-        {/* Gradient Definitions */}
         <defs>
-          <linearGradient id="bg-gradient" x1="0" y1="0" x2="200" y2="200">
-            <stop offset="0%" stopColor="#3b82f6" />
-            <stop offset="100%" stopColor="#6366f1" />
-          </linearGradient>
-          <radialGradient id="inner-gradient" cx="100" cy="100" r="85">
-            <stop offset="0%" stopColor="#1e1b4b" stopOpacity="0.3" />
-            <stop offset="100%" stopColor="#0f172a" stopOpacity="0.8" />
+          <radialGradient id="orb-bg" cx="50%" cy="45%" r="50%">
+            <stop offset="0%" stopColor="#818cf8" stopOpacity="0.4" />
+            <stop offset="40%" stopColor="#3b82f6" stopOpacity="0.2" />
+            <stop offset="100%" stopColor="#0B0F19" stopOpacity="0" />
           </radialGradient>
-          <linearGradient id="face-gradient" x1="50" y1="40" x2="150" y2="150">
-            <stop offset="0%" stopColor="#fde68a" stopOpacity="0.15" />
-            <stop offset="50%" stopColor="#f5deb3" stopOpacity="0.22" />
-            <stop offset="100%" stopColor="#d4a574" stopOpacity="0.12" />
-          </linearGradient>
-          <linearGradient id="hair-gradient" x1="50" y1="20" x2="150" y2="80">
-            <stop offset="0%" stopColor="#1e293b" />
-            <stop offset="100%" stopColor="#334155" />
-          </linearGradient>
-          <linearGradient id="headset-gradient" x1="40" y1="50" x2="160" y2="130">
+          <radialGradient id="orb-core" cx="50%" cy="45%" r="35%">
+            <stop offset="0%" stopColor="#c7d2fe" stopOpacity="0.9" />
+            <stop offset="30%" stopColor="#818cf8" stopOpacity="0.6" />
+            <stop offset="70%" stopColor="#4f46e5" stopOpacity="0.3" />
+            <stop offset="100%" stopColor="#3730a3" stopOpacity="0" />
+          </radialGradient>
+          <linearGradient id="ring-grad" x1="0" y1="0" x2="200" y2="200">
             <stop offset="0%" stopColor="#60a5fa" />
-            <stop offset="100%" stopColor="#818cf8" />
+            <stop offset="50%" stopColor="#818cf8" />
+            <stop offset="100%" stopColor="#a78bfa" />
           </linearGradient>
+          <linearGradient id="wave-grad" x1="30" y1="100" x2="170" y2="100">
+            <stop offset="0%" stopColor="#60a5fa" stopOpacity="0" />
+            <stop offset="20%" stopColor="#60a5fa" stopOpacity="1" />
+            <stop offset="80%" stopColor="#a78bfa" stopOpacity="1" />
+            <stop offset="100%" stopColor="#a78bfa" stopOpacity="0" />
+          </linearGradient>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="3" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
+          <filter id="soft-glow">
+            <feGaussianBlur stdDeviation="8" result="blur" />
+            <feMerge>
+              <feMergeNode in="blur" />
+              <feMergeNode in="SourceGraphic" />
+            </feMerge>
+          </filter>
         </defs>
+
+        {/* Ambient glow */}
+        <circle cx="100" cy="95" r="90" fill="url(#orb-bg)" />
+
+        {/* Outer ring */}
+        <circle
+          cx="100" cy="100" r="80"
+          stroke="url(#ring-grad)" strokeWidth="1" fill="none" opacity="0.3"
+        />
+
+        {/* Inner orb glow */}
+        <circle cx="100" cy="95" r="55" fill="url(#orb-core)" filter="url(#soft-glow)" />
+
+        {/* Bright core */}
+        <circle cx="100" cy="92" r="20" fill="white" opacity="0.08" />
+
+        {/* Voice waveform bars */}
+        <g filter="url(#glow)" opacity="0.9">
+          <rect x="58" y="88" width="3" rx="1.5" fill="url(#wave-grad)" height="24">
+            <animate attributeName="height" values="14;24;14" dur="1.2s" repeatCount="indefinite" />
+            <animate attributeName="y" values="93;88;93" dur="1.2s" repeatCount="indefinite" />
+          </rect>
+          <rect x="66" y="84" width="3" rx="1.5" fill="url(#wave-grad)" height="32">
+            <animate attributeName="height" values="20;32;20" dur="0.9s" repeatCount="indefinite" />
+            <animate attributeName="y" values="90;84;90" dur="0.9s" repeatCount="indefinite" />
+          </rect>
+          <rect x="74" y="78" width="3" rx="1.5" fill="url(#wave-grad)" height="44">
+            <animate attributeName="height" values="28;44;28" dur="1.1s" repeatCount="indefinite" />
+            <animate attributeName="y" values="86;78;86" dur="1.1s" repeatCount="indefinite" />
+          </rect>
+          <rect x="82" y="74" width="3" rx="1.5" fill="url(#wave-grad)" height="52">
+            <animate attributeName="height" values="36;52;36" dur="0.8s" repeatCount="indefinite" />
+            <animate attributeName="y" values="82;74;82" dur="0.8s" repeatCount="indefinite" />
+          </rect>
+          <rect x="90" y="70" width="3" rx="1.5" fill="url(#wave-grad)" height="60">
+            <animate attributeName="height" values="40;60;40" dur="1.0s" repeatCount="indefinite" />
+            <animate attributeName="y" values="80;70;80" dur="1.0s" repeatCount="indefinite" />
+          </rect>
+          <rect x="98" y="72" width="3" rx="1.5" fill="url(#wave-grad)" height="56">
+            <animate attributeName="height" values="38;56;38" dur="0.85s" repeatCount="indefinite" />
+            <animate attributeName="y" values="81;72;81" dur="0.85s" repeatCount="indefinite" />
+          </rect>
+          <rect x="106" y="76" width="3" rx="1.5" fill="url(#wave-grad)" height="48">
+            <animate attributeName="height" values="32;48;32" dur="1.15s" repeatCount="indefinite" />
+            <animate attributeName="y" values="84;76;84" dur="1.15s" repeatCount="indefinite" />
+          </rect>
+          <rect x="114" y="80" width="3" rx="1.5" fill="url(#wave-grad)" height="40">
+            <animate attributeName="height" values="24;40;24" dur="0.95s" repeatCount="indefinite" />
+            <animate attributeName="y" values="88;80;88" dur="0.95s" repeatCount="indefinite" />
+          </rect>
+          <rect x="122" y="84" width="3" rx="1.5" fill="url(#wave-grad)" height="32">
+            <animate attributeName="height" values="18;32;18" dur="1.1s" repeatCount="indefinite" />
+            <animate attributeName="y" values="91;84;91" dur="1.1s" repeatCount="indefinite" />
+          </rect>
+          <rect x="130" y="86" width="3" rx="1.5" fill="url(#wave-grad)" height="28">
+            <animate attributeName="height" values="16;28;16" dur="0.9s" repeatCount="indefinite" />
+            <animate attributeName="y" values="92;86;92" dur="0.9s" repeatCount="indefinite" />
+          </rect>
+          <rect x="138" y="90" width="3" rx="1.5" fill="url(#wave-grad)" height="20">
+            <animate attributeName="height" values="12;20;12" dur="1.2s" repeatCount="indefinite" />
+            <animate attributeName="y" values="94;90;94" dur="1.2s" repeatCount="indefinite" />
+          </rect>
+        </g>
+
+        {/* Orbiting particles */}
+        <circle r="2.5" fill="#60a5fa" opacity="0.8">
+          <animateMotion dur="8s" repeatCount="indefinite" path="M100,20 A80,80 0 1,1 99.9,20" />
+          <animate attributeName="opacity" values="0.4;1;0.4" dur="2s" repeatCount="indefinite" />
+        </circle>
+        <circle r="2" fill="#a78bfa" opacity="0.6">
+          <animateMotion dur="6s" repeatCount="indefinite" path="M100,30 A70,70 0 1,0 99.9,30" />
+          <animate attributeName="opacity" values="0.3;0.8;0.3" dur="1.8s" repeatCount="indefinite" />
+        </circle>
+        <circle r="1.5" fill="#c7d2fe" opacity="0.5">
+          <animateMotion dur="10s" repeatCount="indefinite" path="M100,25 A75,75 0 1,1 99.9,25" />
+        </circle>
+
+        {/* "L" letter */}
+        <text
+          x="100" y="108"
+          textAnchor="middle"
+          fontFamily="system-ui, sans-serif"
+          fontWeight="700"
+          fontSize="28"
+          fill="white"
+          opacity="0.15"
+        >
+          L
+        </text>
       </svg>
 
       {/* Online indicator */}
