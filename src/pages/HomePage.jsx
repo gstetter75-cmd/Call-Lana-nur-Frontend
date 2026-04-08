@@ -102,7 +102,7 @@ export default function HomePage() {
                     </div>
                   </div>
                 </div>
-                <div className="absolute bottom-20 -right-8 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 shadow-2xl animate-[bounce_5s_infinite_1s]">
+                <div className="absolute bottom-20 right-0 bg-white/5 backdrop-blur-xl border border-white/10 rounded-2xl p-4 shadow-2xl animate-[bounce_5s_infinite_1s]">
                   <div className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-full bg-blue-500/20 flex items-center justify-center">
                       <MessageSquare className="w-4 h-4 text-blue-400" />

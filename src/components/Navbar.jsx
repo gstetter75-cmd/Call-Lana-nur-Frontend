@@ -55,7 +55,7 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8 text-sm font-medium bg-white/5 px-6 py-2 rounded-full border border-white/10 backdrop-blur-md shadow-[0_0_15px_rgba(255,255,255,0.02)]">
+        <div className="hidden md:flex items-center gap-5 lg:gap-8 text-sm font-medium bg-white/5 px-4 lg:px-6 py-2 rounded-full border border-white/10 backdrop-blur-md shadow-[0_0_15px_rgba(255,255,255,0.02)]">
           {NAV_LINKS.map((link) => (
             <Link
               key={link.to}
@@ -74,10 +74,10 @@ export default function Navbar() {
           ))}
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3 flex-shrink-0">
           <Link
             to="/kontakt"
-            className="hidden sm:block bg-white text-slate-900 hover:bg-slate-200 px-5 py-2.5 rounded-full text-sm font-semibold transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(255,255,255,0.1)]"
+            className="hidden sm:block bg-white text-slate-900 hover:bg-slate-200 px-4 lg:px-5 py-2 lg:py-2.5 rounded-full text-sm font-semibold transition-all hover:scale-105 active:scale-95 shadow-[0_0_20px_rgba(255,255,255,0.1)] whitespace-nowrap"
           >
             Demo buchen
           </Link>
